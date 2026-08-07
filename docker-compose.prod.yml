@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # ---------------------------------------------------
+  # App service — chạy bằng production stage
+  # ---------------------------------------------------
+  app:
+    build:
+      context: .
+      target: production         # Chọn production stage trong Dockerfile
+    container_name: acquisitions-app-prod
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production          # Load biến production (DATABASE_URL trỏ Neon Cloud)
+    restart: always              # Tự restart nếu crash — quan trọng trên production
+
+    # Healthcheck ở đây đồng bộ với HEALTHCHECK trong Dockerfile
+    # Docker Compose dùng thông tin này để báo cáo trạng thái service
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # Không có database service vì production dùng Neon Cloud (external)
+  # DATABASE_URL trong .env.production đã trỏ thẳng tới Neon Cloud

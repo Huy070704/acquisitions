@@ -1,2 +1,20 @@
-node_modules
-.env*
+# Dependencies
+node_modules/
+
+# Environment files — KHÔNG bao giờ commit file có giá trị thật
+.env
+.env.development
+.env.production
+.env.local
+.env.*.local
+
+# Nhưng COMMIT .env.example (là template hướng dẫn)
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/

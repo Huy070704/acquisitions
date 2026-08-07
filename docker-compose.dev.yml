@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # ---------------------------------------------------
+  # App service — chạy bằng development stage
+  # ---------------------------------------------------
+  app:
+    build:
+      context: .
+      target: development        # Chọn đúng stage trong Dockerfile
+    container_name: acquisitions-app-dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development         # Load biến từ file dev
+    volumes:
+      - .:/app                   # Mount source code → hot-reload hoạt động
+      - /app/node_modules        # Anonymous volume: giữ node_modules của container
+                                 # tránh bị ghi đè bởi thư mục rỗng trên host
+    depends_on:
+      neon-local:
+        condition: service_started   # Đợi neon-local khởi động trước
+    restart: unless-stopped
+
+  # ---------------------------------------------------
+  # Database service — Neon Local (PostgreSQL proxy)
+  # ---------------------------------------------------
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: acquisitions-neon-local
+    ports:
+      - "5432:5432"              # Expose ra host để dùng psql/TablePlus khi cần
+    env_file:
+      - .env.development         # Cần NEON_API_KEY, NEON_PROJECT_ID, BRANCH_ID
+    restart: unless-stopped
