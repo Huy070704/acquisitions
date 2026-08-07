@@ -57,3 +57,34 @@ export const createUser = async ({ name, email, password, role = 'user' }) => {
     throw error;
   }
 };
+
+export const comparePassword = async (plainPassword, hashedPassword) => {
+  return await bcrypt.compare(plainPassword, hashedPassword);
+};
+
+export const authenticateUser = async ({ email, password }) => {
+  try {
+    const existingUser = await db
+      .select()
+      .from(users)
+      .where(eq(users.email, email))
+      .limit(1);
+
+    if (existingUser.length === 0) {
+      throw new Error('Invalid credentials');
+    }
+
+    const user = existingUser[0];
+    const isPasswordMatch = await comparePassword(password, user.password);
+
+    if (!isPasswordMatch) {
+      throw new Error('Invalid credentials');
+    }
+
+    const { password: _, ...userWithoutPassword } = user;
+    return userWithoutPassword;
+  } catch (error) {
+    logger.error('Error authenticating user:', error);
+    throw error;
+  }
+};

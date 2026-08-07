@@ -119,3 +119,40 @@
 {"level":"info","message":"::ffff:172.20.0.1 - - [06/Aug/2026:18:29:16 +0000] \"HEAD / HTTP/1.1\" 200 23 \"-\" \"Go-http-client/1.1\"","service":"acquisitions-api","timestamp":"2026-08-06T18:29:16.929Z"}
 {"level":"info","message":"Hello from acquisition","service":"acquisitions-api","timestamp":"2026-08-06T18:29:17.189Z"}
 {"level":"info","message":"::ffff:172.20.0.1 - - [06/Aug/2026:18:29:17 +0000] \"GET / HTTP/1.1\" 200 23 \"-\" \"Go-http-client/1.1\"","service":"acquisitions-api","timestamp":"2026-08-06T18:29:17.191Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T04:28:42.090Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:04:28:42 +0000] \"GET /api/users HTTP/1.1\" 200 527 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T04:28:42.310Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T04:34:21.542Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:04:34:22 +0000] \"GET /api/users HTTP/1.1\" 200 527 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T04:34:22.388Z"}
+{"level":"info","message":"Hello from acquisition","service":"acquisitions-api","timestamp":"2026-08-07T04:34:27.575Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:04:34:27 +0000] \"GET / HTTP/1.1\" 200 23 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-08-07T04:34:27.577Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:04:34:28 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-08-07T04:34:28.663Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T04:34:38.941Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:04:34:38 +0000] \"GET /api/users HTTP/1.1\" 200 527 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-08-07T04:34:38.998Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T04:36:55.107Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:04:36:55 +0000] \"GET /api/users HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-08-07T04:36:55.164Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T05:01:49.416Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:01:50 +0000] \"GET /api/users HTTP/1.1\" 200 527 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:01:50.152Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:01:54 +0000] \"GET /api/users/2 HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:01:54.882Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:02:09 +0000] \"GET /api/users/2 HTTP/1.1\" 200 - \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:02:09.251Z"}
+{"level":"info","message":"Getting user by ID: 2","service":"acquisitions-api","timestamp":"2026-08-07T05:02:52.036Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:02:52 +0000] \"GET /api/users/2 HTTP/1.1\" 200 203 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:02:52.218Z"}
+{"level":"info","message":"Getting user by ID: 2","service":"acquisitions-api","timestamp":"2026-08-07T05:07:34.690Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:07:34 +0000] \"GET /api/users/2 HTTP/1.1\" 200 203 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:07:34.750Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T05:07:38.938Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:07:38 +0000] \"GET /api/users HTTP/1.1\" 200 527 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:07:38.995Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:09:02 +0000] \"GET /api/users HTTP/1.1\" 401 54 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:09:02.305Z"}
+{"level":"info","message":"User signed in successfully: huythanh12345@gmail.com","service":"acquisitions-api","timestamp":"2026-08-07T05:17:21.431Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:17:21 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 125 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:17:21.438Z"}
+{"level":"info","message":"Getting user by ID: 3","service":"acquisitions-api","timestamp":"2026-08-07T05:17:32.922Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:17:32 +0000] \"GET /api/users/3 HTTP/1.1\" 200 203 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:17:32.979Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:17:49 +0000] \"DELETE /api/users/3 HTTP/1.1\" 403 83 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:17:49.389Z"}
+{"level":"info","message":"User with email: admin@gmail.com created successfully","service":"acquisitions-api","timestamp":"2026-08-07T05:19:52.580Z"}
+{"level":"info","message":"User signed up successfully: admin@gmail.com","service":"acquisitions-api","timestamp":"2026-08-07T05:19:52.582Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:19:52 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 123 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:19:52.584Z"}
+{"level":"info","message":"Deleting user ID: 1","service":"acquisitions-api","timestamp":"2026-08-07T05:23:23.745Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:23:23 +0000] \"DELETE /api/users/1 HTTP/1.1\" 200 39 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:23:23.862Z"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api","timestamp":"2026-08-07T05:23:31.723Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:23:31 +0000] \"GET /api/users HTTP/1.1\" 200 528 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:23:31.780Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:23:58 +0000] \"GET /api/users HTTP/1.1\" 401 54 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-08-07T05:23:58.809Z"}
+{"level":"info","message":"Getting user by ID: 2","service":"acquisitions-api","timestamp":"2026-08-07T05:24:15.009Z"}
+{"level":"info","message":"::ffff:172.20.0.1 - - [07/Aug/2026:05:24:15 +0000] \"GET /api/users/2 HTTP/1.1\" 200 203 \"-\" \"PostmanRuntime/7.56.0\"","service":"acquisitions-api","timestamp":"2026-08-07T05:24:15.065Z"}
