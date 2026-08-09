@@ -13,7 +13,7 @@ async function waitDb() {
       await client.end();
       console.log('Database is ready! Proceeding with migrations...');
       process.exit(0);
-    } catch (err) {
+    } catch {
       console.log(
         `Database not ready yet (attempt ${i + 1}/${maxRetries}), retrying in 1s...`
       );

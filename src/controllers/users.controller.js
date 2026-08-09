@@ -9,7 +9,6 @@ import {
   updateUserSchema,
   userIdSchema,
 } from '#validations/users.validation.js';
-import { JWT } from '#utils/jwt.js';
 import { formatValidationError } from '../utils/format.js';
 
 export const fetchAllUsers = async (req, res, next) => {

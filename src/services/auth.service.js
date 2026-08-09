@@ -81,7 +81,8 @@ export const authenticateUser = async ({ email, password }) => {
       throw new Error('Invalid credentials');
     }
 
-    const { password: _, ...userWithoutPassword } = user;
+    const userWithoutPassword = { ...user };
+    delete userWithoutPassword.password;
     return userWithoutPassword;
   } catch (error) {
     logger.error('Error authenticating user:', error);

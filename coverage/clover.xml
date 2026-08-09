@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1786253090412" clover="3.2.0">
-  <project timestamp="1786253090413" name="All files">
-    <metrics statements="874" coveredstatements="334" conditionals="14" coveredconditionals="6" methods="27" coveredmethods="3" elements="915" coveredelements="343" complexity="0" loc="874" ncloc="874" packages="9" files="18" classes="18"/>
+<coverage generated="1786255262456" clover="3.2.0">
+  <project timestamp="1786255262456" name="All files">
+    <metrics statements="874" coveredstatements="333" conditionals="14" coveredconditionals="6" methods="27" coveredmethods="3" elements="915" coveredelements="342" complexity="0" loc="874" ncloc="874" packages="9" files="18" classes="18"/>
     <package name="src">
       <metrics statements="52" coveredstatements="50" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <file name="app.js" path="D:\devopspractice\acquisitions\src\app.js">
@@ -156,7 +156,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="260" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
+      <metrics statements="259" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
       <file name="auth.controller.js" path="D:\devopspractice\acquisitions\src\controllers\auth.controller.js">
         <metrics statements="110" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -271,7 +271,7 @@
         <line num="110" count="0" type="stmt"/>
       </file>
       <file name="users.controller.js" path="D:\devopspractice\acquisitions\src\controllers\users.controller.js">
-        <metrics statements="150" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <metrics statements="149" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -286,7 +286,7 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
@@ -303,9 +303,9 @@
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
@@ -330,9 +330,9 @@
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
@@ -388,9 +388,9 @@
         <line num="114" count="0" type="stmt"/>
         <line num="115" count="0" type="stmt"/>
         <line num="116" count="0" type="stmt"/>
-        <line num="117" count="0" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
         <line num="118" count="1" type="stmt"/>
-        <line num="119" count="1" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
@@ -421,7 +421,6 @@
         <line num="147" count="0" type="stmt"/>
         <line num="148" count="0" type="stmt"/>
         <line num="149" count="0" type="stmt"/>
-        <line num="150" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.middleware">
@@ -636,9 +635,9 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="179" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <metrics statements="180" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
       <file name="auth.service.js" path="D:\devopspractice\acquisitions\src\services\auth.service.js">
-        <metrics statements="90" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <metrics statements="91" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -729,6 +728,7 @@
         <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
         <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
       </file>
       <file name="users.service.js" path="D:\devopspractice\acquisitions\src\services\users.service.js">
         <metrics statements="89" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>

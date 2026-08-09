@@ -1,4 +1,4 @@
-/* eslint-env jest */
+/* global describe, it, expect */
 import request from 'supertest';
 import app from '#src/app.js';
 

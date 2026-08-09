@@ -7,18 +7,18 @@ services:
   app:
     build:
       context: .
-      target: production         # Chọn production stage trong Dockerfile
+      target: production # Chọn production stage trong Dockerfile
     container_name: acquisitions-app-prod
     ports:
-      - "3000:3000"
+      - '3000:3000'
     env_file:
-      - .env.production          # Load biến production (DATABASE_URL trỏ Neon Cloud)
-    restart: always              # Tự restart nếu crash — quan trọng trên production
+      - .env.production # Load biến production (DATABASE_URL trỏ Neon Cloud)
+    restart: always # Tự restart nếu crash — quan trọng trên production
 
     # Healthcheck ở đây đồng bộ với HEALTHCHECK trong Dockerfile
     # Docker Compose dùng thông tin này để báo cáo trạng thái service
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:3000/health']
       interval: 30s
       timeout: 10s
       retries: 3

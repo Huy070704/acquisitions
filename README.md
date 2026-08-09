@@ -4,8 +4,8 @@ This project is a Node.js API built with ExpressJS and Drizzle ORM, using Neon S
 
 ## Architecture
 
-*   **Development**: Uses a multi-container Docker Compose setup. It runs the Node.js application alongside a `neon-local` proxy container. This allows local development with Neon's branching capabilities without exposing your cloud database directly. Hot-reloading is supported.
-*   **Production**: Uses a single Docker container running a streamlined, production-ready image. It connects directly to your Neon cloud database URL.
+- **Development**: Uses a multi-container Docker Compose setup. It runs the Node.js application alongside a `neon-local` proxy container. This allows local development with Neon's branching capabilities without exposing your cloud database directly. Hot-reloading is supported.
+- **Production**: Uses a single Docker container running a streamlined, production-ready image. It connects directly to your Neon cloud database URL.
 
 ---
 
@@ -15,20 +15,22 @@ The development environment runs your code using `npm run dev` with hot reloadin
 
 ### Prerequisites
 
-*   Docker and Docker Compose installed.
-*   A Neon account (https://neon.tech).
+- Docker and Docker Compose installed.
+- A Neon account (https://neon.tech).
 
 ### Step 1: Environment Variables
 
 Create your development environment file:
+
 ```bash
 cp .env.development .env.development.local # or just use .env.development
 ```
 
 Fill in your Neon credentials in `.env.development`:
-*   `NEON_API_KEY`: Generate this from your Neon account settings (Developer Settings -> API Keys).
-*   `NEON_PROJECT_ID`: Find this in your Neon project settings (e.g., `shiny-water-123456`).
-*   `NEON_BRANCH_ID`: The branch you want to use for local development (e.g., `br-nameless-shape-123456`).
+
+- `NEON_API_KEY`: Generate this from your Neon account settings (Developer Settings -> API Keys).
+- `NEON_PROJECT_ID`: Find this in your Neon project settings (e.g., `shiny-water-123456`).
+- `NEON_BRANCH_ID`: The branch you want to use for local development (e.g., `br-nameless-shape-123456`).
 
 ### Step 2: Start the Environment
 
@@ -40,6 +42,7 @@ bash scripts/dev.sh
 ```
 
 This script will:
+
 1. Validate your `.env.development` file.
 2. Spin up the `app` and `neon-local` proxy containers.
 3. Wait for the database proxy to be ready.
@@ -60,6 +63,7 @@ The production setup skips the Neon Local proxy and connects directly to your li
 ### Step 1: Environment Variables
 
 Configure your production environment file:
+
 ```bash
 # Edit .env.production
 ```
