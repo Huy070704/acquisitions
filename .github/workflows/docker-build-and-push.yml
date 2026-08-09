@@ -26,17 +26,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Get Repository Name in Lowercase
-        id: repo-name
-        run: |
-          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')
-          echo "lowercase_name=${REPO_NAME}" >> $GITHUB_OUTPUT
-
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKER_USERNAME }}/${{ steps.repo-name.outputs.lowercase_name }}
+          images: ${{ secrets.DOCKER_USERNAME }}/kubernetes-demo-api
           tags: |
             type=ref,event=branch
             type=sha
@@ -61,7 +55,7 @@ jobs:
         run: |
           echo "### Docker Build & Push Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Image Name:** \`${{ secrets.DOCKER_USERNAME }}/${{ steps.repo-name.outputs.lowercase_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image Name:** \`${{ secrets.DOCKER_USERNAME }}/kubernetes-demo-api\`" >> $GITHUB_STEP_SUMMARY
           echo "- **Build Status:** ${{ steps.build-push.outcome == 'success' && '🟢 Success' || '🔴 Failed' }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Published Tags:**" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
