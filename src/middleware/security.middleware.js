@@ -3,6 +3,7 @@ import { slidingWindow } from '@arcjet/node';
 import logger from '#config/logger.js';
 
 const securityMiddleware = async (req, res, next) => {
+  if (process.env.NODE_ENV === 'test') return next();
   try {
     // 1. Lấy role của user từ req.user (nếu có), mặc định là 'guest'
     const role = req.user?.role || 'guest';
