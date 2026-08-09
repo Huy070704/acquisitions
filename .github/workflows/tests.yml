@@ -1,0 +1,81 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  pull_request:
+    branches:
+      - main
+      - staging
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        env:
+          NODE_ENV: test
+          NODE_OPTIONS: --experimental-vm-modules
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="lcov" --coverageReporters="text" --reporters="default" --reporters="github-actions"
+
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 30
+
+      - name: Generate Step Summary
+        if: always()
+        run: |
+          if [ -f coverage/coverage-summary.json ]; then
+            lines_total=$(jq '.total.lines.total' coverage/coverage-summary.json)
+            lines_covered=$(jq '.total.lines.covered' coverage/coverage-summary.json)
+            lines_skipped=$(jq '.total.lines.skipped' coverage/coverage-summary.json)
+            lines_pct=$(jq '.total.lines.pct' coverage/coverage-summary.json)
+
+            statements_total=$(jq '.total.statements.total' coverage/coverage-summary.json)
+            statements_covered=$(jq '.total.statements.covered' coverage/coverage-summary.json)
+            statements_skipped=$(jq '.total.statements.skipped' coverage/coverage-summary.json)
+            statements_pct=$(jq '.total.statements.pct' coverage/coverage-summary.json)
+
+            functions_total=$(jq '.total.functions.total' coverage/coverage-summary.json)
+            functions_covered=$(jq '.total.functions.covered' coverage/coverage-summary.json)
+            functions_skipped=$(jq '.total.functions.skipped' coverage/coverage-summary.json)
+            functions_pct=$(jq '.total.functions.pct' coverage/coverage-summary.json)
+
+            branches_total=$(jq '.total.branches.total' coverage/coverage-summary.json)
+            branches_covered=$(jq '.total.branches.covered' coverage/coverage-summary.json)
+            branches_skipped=$(jq '.total.branches.skipped' coverage/coverage-summary.json)
+            branches_pct=$(jq '.total.branches.pct' coverage/coverage-summary.json)
+
+            echo "### Jest Test Coverage Summary" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Category | Total | Covered | Skipped | Percentage |" >> $GITHUB_STEP_SUMMARY
+            echo "| --- | --- | --- | --- | --- |" >> $GITHUB_STEP_SUMMARY
+            echo "| **Lines** | $lines_total | $lines_covered | $lines_skipped | ${lines_pct}% |" >> $GITHUB_STEP_SUMMARY
+            echo "| **Statements** | $statements_total | $statements_covered | $statements_skipped | ${statements_pct}% |" >> $GITHUB_STEP_SUMMARY
+            echo "| **Functions** | $functions_total | $functions_covered | $functions_skipped | ${functions_pct}% |" >> $GITHUB_STEP_SUMMARY
+            echo "| **Branches** | $branches_total | $branches_covered | $branches_skipped | ${branches_pct}% |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### Test Results" >> $GITHUB_STEP_SUMMARY
+            echo "No coverage report found." >> $GITHUB_STEP_SUMMARY
+          fi
